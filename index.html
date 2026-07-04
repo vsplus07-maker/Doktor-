@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Врач-остеопат. Профессиональное лечение заболеваний опорно-двигательного аппарата.">
     <meta name="keywords" content="остеопат, остеопатия, лечение позвоночника, боль в спине">
-    <meta property="og:title" content="Доктор - Остеопат">
-    <meta property="og:description" content="Профессиональные услуги остеопата с многолетним опытом">
     <title>Доктор - Остеопат | Профессиональное лечение</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,14 +12,17 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="logo">🏥 Доктор</div>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🏥</span>
+                <span class="logo-text">Доктор</span>
+            </div>
             <ul class="nav-menu">
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#blog">Блог</a></li>
-                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#home" class="nav-link">Главная</a></li>
+                <li><a href="#about" class="nav-link">О мне</a></li>
+                <li><a href="#services" class="nav-link">Услуги</a></li>
+                <li><a href="#portfolio" class="nav-link">Результаты</a></li>
+                <li><a href="#contact" class="nav-link btn-primary">Контакт</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -33,42 +34,59 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Здравствуйте!</h1>
-            <p>Я врач-остеопат с многолетним опытом</p>
-            <p class="hero-subtitle">Профессиональное лечение заболеваний опорно-двигательного аппарата</p>
-            <a href="#contact" class="cta-button">Записаться на прием</a>
-        </div>
-        <div class="hero-image">
-            <img src="https://via.placeholder.com/400x450" alt="Доктор">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Профессиональная остеопатия</h1>
+                <p class="hero-subtitle">Лечение заболеваний опорно-двигательного аппарата с использованием современных методик</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Записаться на прием</a>
+                    <a href="#about" class="btn btn-secondary">Узнать больше</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>15+</h3>
+                        <p>Лет опыта</p>
+                    </div>
+                    <div class="stat">
+                        <h3>2000+</h3>
+                        <p>Пациентов</p>
+                    </div>
+                    <div class="stat">
+                        <h3>99%</h3>
+                        <p>Удовлетворение</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <img src="https://via.placeholder.com/500x500" alt="Остеопат">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2>Обо мне</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Я специалист в области остеопатии с глубокими знаниями анатомии и физиологии человеческого организма. Мой подход основан на индивидуальном анализе каждого пациента и применении наиболее эффективных методов лечения.</p>
-                    <p>Моя цель - не просто избавить вас от боли, но и восстановить нормальное функционирование вашего организма, улучшить качество жизни и предотвратить возникновение новых проблем.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>15+</h3>
-                            <p>Лет опыта</p>
-                        </div>
-                        <div class="stat">
-                            <h3>2000+</h3>
-                            <p>Помощь пациентам</p>
-                        </div>
-                        <div class="stat">
-                            <h3>99%</h3>
-                            <p>Удовлетворение</p>
-                        </div>
-                    </div>
+            <div class="section-header">
+                <h2 class="section-title">Обо мне</h2>
+                <p class="section-description">Профессиональный врач-остеопат с глубокими знаниями анатомии и физиологии</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Образование</h3>
+                    <p>Высшее медицинское образование, курсы повышения квалификации по остеопатии</p>
                 </div>
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/300x350" alt="Доктор профиль">
+                <div class="about-card glass-card">
+                    <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Сертификация</h3>
+                    <p>Лицензированный специалист с международными сертификатами</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="card-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Подход</h3>
+                    <p>Индивидуальный анализ каждого пациента и применение наиболее эффективных методов</p>
                 </div>
             </div>
         </div>
@@ -77,71 +95,77 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2>Мои услуги</h2>
+            <div class="section-header">
+                <h2 class="section-title">Услуги</h2>
+                <p class="section-description">Полный спектр остеопатической помощи для всех возрастов</p>
+            </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-spine"></i>
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-spine"></i></div>
                     <h3>Остеопатия позвоночника</h3>
-                    <p>Лечение болей в сп��не, остеохондроза, грыж дисков и других заболеваний позвоночника</p>
-                    <a href="#contact" class="service-link">Узнать больше →</a>
+                    <p>Лечение болей в спине, остеохондроза, грыж дисков и других заболеваний позвоночника</p>
+                    <a href="#contact" class="service-link">Подробнее →</a>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-bone"></i>
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-bone"></i></div>
                     <h3>Остеопатия суставов</h3>
                     <p>Восстановление суставов, лечение артрита, артроза и других проблем с суставами</p>
-                    <a href="#contact" class="service-link">Узнать больше →</a>
+                    <a href="#contact" class="service-link">Подробнее →</a>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-person-running"></i>
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-person-running"></i></div>
                     <h3>Спортивная остеопатия</h3>
-                    <p>Специализированное лечение спортивных травм и повреждений для активных людей</p>
-                    <a href="#contact" class="service-link">Узнать больше →</a>
+                    <p>Специализированное лечение спортивных травм и повреждений</p>
+                    <a href="#contact" class="service-link">Подробнее →</a>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-child"></i>
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-child"></i></div>
                     <h3>Остеопатия для детей</h3>
                     <p>Профилактика и лечение заболеваний опорно-двигательной системы у детей</p>
-                    <a href="#contact" class="service-link">Узнать больше →</a>
+                    <a href="#contact" class="service-link">Подробнее →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2>Последние статьи из блога</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Блог">
-                    <div class="blog-content">
-                        <h3>5 упражнений для здоровья спины</h3>
-                        <p class="date">📅 4 июля 2026</p>
-                        <p>Простые и эффективные упражнения, которые помогут укрепить мышцы спины и избежать болей. Выполняйте их регулярно для лучших результатов.</p>
-                        <a href="#" class="read-more">Читать полностью →</a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Блог">
-                    <div class="blog-content">
-                        <h3>Остеопатия: что это и как она помогает</h3>
-                        <p class="date">📅 3 июля 2026</p>
-                        <p>Полное объяснение принципов остеопатии, её эффективности и того, как она может помочь вам избавиться от хронических болей.</p>
-                        <a href="#" class="read-more">Читать полностью →</a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Блог">
-                    <div class="blog-content">
-                        <h3>Профилактика заболеваний позвоночника</h3>
-                        <p class="date">📅 2 июля 2026</p>
-                        <p>Практические советы по профилактике заболеваний позвоночника. Советы по правильной осанке, выбору рабочего места и образу жизни.</p>
-                        <a href="#" class="read-more">Читать полностью →</a>
-                    </div>
-                </article>
+            <div class="section-header">
+                <h2 class="section-title">Результаты работы</h2>
+                <p class="section-description">Реальные истории успеха наших пациентов</p>
             </div>
-            <div class="blog-cta">
-                <a href="#" class="btn-all-posts">Все статьи →</a>
+            <div class="portfolio-grid">
+                <div class="portfolio-card glass-card">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/300x250" alt="Результат 1">
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Восстановление после травмы</h4>
+                        <p>Пациент восстановил полную подвижность после серьезной травмы спины</p>
+                        <span class="portfolio-tag">Спортивная травма</span>
+                    </div>
+                </div>
+                <div class="portfolio-card glass-card">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/300x250" alt="Результат 2">
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Избавление от хронической боли</h4>
+                        <p>После 5 лет хронических болей пациент вернулся к нормальной жизни</p>
+                        <span class="portfolio-tag">Хроническая боль</span>
+                    </div>
+                </div>
+                <div class="portfolio-card glass-card">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/300x250" alt="Результат 3">
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Коррекция осанки</h4>
+                        <p>Успешная коррекция осанки и укрепление мышц спины</p>
+                        <span class="portfolio-tag">Профилактика</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -149,9 +173,12 @@
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
-            <h2>Отзывы пациентов</h2>
+            <div class="section-header">
+                <h2 class="section-title">Отзывы пациентов</h2>
+                <p class="section-description">Что говорят о нас люди, которых мы помогли</p>
+            </div>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card glass-card">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -159,10 +186,10 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Спасибо большое! Мне помогли избавиться от боли в спине после первых же сеансов. Очень профессиональный врач."</p>
-                    <p class="author">— Иван М.</p>
+                    <p class="testimonial-text">"Спасибо большое! Мне помогли избавиться от боли в спине после первых же сеансов. Очень профессиональный врач."</p>
+                    <p class="testimonial-author">— Иван М.</p>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card glass-card">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -170,10 +197,10 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Наконец-то нашла специалиста, который действительно помогает. Результаты видны уже после первого посещения!"</p>
-                    <p class="author">— Мария К.</p>
+                    <p class="testimonial-text">"Наконец-то нашла специалиста, который действительно помогает. Результаты видны уже после первого посещения!"</p>
+                    <p class="testimonial-author">— Мария К.</p>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card glass-card">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -181,8 +208,8 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Очень внимательный и заботливый подход. Рекомендую всем, кто страдает от проблем с позвоночником."</p>
-                    <p class="author">— Петр В.</p>
+                    <p class="testimonial-text">"Очень внимательный и заботливый подход. Рекомендую всем, кто страдает от проблем с позвоночником."</p>
+                    <p class="testimonial-author">— Петр В.</p>
                 </div>
             </div>
         </div>
@@ -191,39 +218,46 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Свяжитесь со мной</h2>
+            <div class="section-header">
+                <h2 class="section-title">Свяжитесь со мной</h2>
+                <p class="section-description">Готов помочь вам вернуть здоровье</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="info-section">
-                        <h3>📍 Адрес</h3>
+                    <div class="info-card glass-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h4>Адрес</h4>
                         <p>Ваш город, улица</p>
-                        <p>Офис находится удобно для доступа общественным транспортом</p>
+                        <p>Офис расположен удобно для доступа общественным транспортом</p>
                     </div>
-                    <div class="info-section">
-                        <h3>📞 Контакты</h3>
+                    <div class="info-card glass-card">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <h4>Телефон</h4>
                         <p><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+                        <p>Доступно для консультаций</p>
+                    </div>
+                    <div class="info-card glass-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <h4>Email</h4>
                         <p><a href="mailto:doctor@email.com">doctor@email.com</a></p>
-                    </div>
-                    <div class="info-section">
-                        <h3>🕐 Часы работы</h3>
-                        <p>Пн - Пт: 09:00 - 19:00</p>
-                        <p>Сб: 10:00 - 16:00</p>
-                        <p>Вс: По предварительной записи</p>
-                    </div>
-                    <div class="social-links">
-                        <h3>📱 Социальные сети</h3>
-                        <a href="https://t.me/" title="Telegram"><i class="fab fa-telegram"></i> Telegram</a>
-                        <a href="https://instagram.com/" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
-                        <a href="https://wa.me/79991234567" title="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <p>Отвечаю в течение часа</p>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <h3>Запись на прием</h3>
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="email" placeholder="Ваш email" required>
-                    <input type="tel" placeholder="Ваш телефон" required>
-                    <textarea placeholder="Опишите вашу проблему" rows="5" required></textarea>
-                    <button type="submit" class="submit-button">Отправить запрос</button>
+                <form class="contact-form glass-card">
+                    <h3>Записаться на прием</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Ваш email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Ваш телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Опишите вашу проблему" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
                 </form>
             </div>
         </div>
@@ -232,8 +266,35 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Доктор - Остеопат. Все права защищены.</p>
-            <p>Созда��о с ❤️ для вашего здоровья</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Доктор</h4>
+                    <p>Профессиональные услуги остеопата с многолетним опытом</p>
+                    <div class="social-links">
+                        <a href="#" title="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#services">Остеопатия позвоночника</a></li>
+                        <li><a href="#services">Остеопатия суставов</a></li>
+                        <li><a href="#services">Спортивная остеопатия</a></li>
+                        <li><a href="#services">Остеопатия для детей</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Время работы</h4>
+                    <p>Пн-Пт: 09:00 - 19:00</p>
+                    <p>Сб: 10:00 - 16:00</p>
+                    <p>Вс: По предварительной записи</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Доктор - Остеопат. Все права защищены.</p>
+            </div>
         </div>
     </footer>
 

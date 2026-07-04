@@ -5,16 +5,14 @@ const navMenu = document.querySelector('.nav-menu');
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
     });
 }
 
 // Close menu when clicking on a link
-const navLinks = document.querySelectorAll('.nav-menu a');
+const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger?.classList.remove('active');
+        navMenu?.classList.remove('active');
     });
 });
 
@@ -38,17 +36,19 @@ if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(this);
         const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        const phone = this.querySelector('input[type="tel"]').value;
+        const message = this.querySelector('textarea').value;
         
-        // Show success message
-        alert(`Спасибо за ваше сообщение, ${name}! Я свяжусь с вами в ближайшее время.`);
+        alert(`Спасибо за ваше сообщение, ${name}!\n\nЯ свяжусь с вами в ближайшее время по номеру ${phone} или email ${email}.`);
+        
+        // Here you would typically send the data to a server
         this.reset();
     });
 }
 
-// Intersection Observer for fade-in animation
+// Scroll animation for elements
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -64,35 +64,25 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Apply observer to cards
-document.querySelectorAll('.service-card, .blog-card, .testimonial-card').forEach(card => {
+document.querySelectorAll('.glass-card, .service-card, .portfolio-card, .testimonial-card').forEach(card => {
     observer.observe(card);
 });
 
-// Active Nav Link
+// Navbar background on scroll
+const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
-    let current = '';
-    
-    document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Scroll to top button (optional enhancement)
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        // Could add a "scroll to top" button here
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(10, 14, 39, 0.95)';
+        navbar.style.boxShadow = '0 5px 20px rgba(0, 212, 255, 0.1)';
+    } else {
+        navbar.style.background = 'rgba(10, 14, 39, 0.8)';
+        navbar.style.boxShadow = 'none';
     }
 });
 
-// Log page load
-console.log('🏥 Сайт врача-остеопата загружен успешно!');
+// Cursor effect (optional)
+document.addEventListener('mousemove', (e) => {
+    // You can add custom cursor effects here
+});
+
+console.log('🏥 Сайт остеопата загружен успешно!');
