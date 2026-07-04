@@ -1,1 +1,361 @@
-* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nbody {\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n    min-height: 100vh;\n    padding: 40px 20px;\n    overflow-x: hidden;\n}\n\n.clock-container {\n    max-width: 1400px;\n    margin: 0 auto;\n}\n\n/* Header */\n.header {\n    text-align: center;\n    margin-bottom: 60px;\n    animation: slideDown 0.8s ease;\n}\n\n.header h1 {\n    font-size: 48px;\n    color: white;\n    margin-bottom: 10px;\n    font-weight: 700;\n    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n\n.header p {\n    font-size: 18px;\n    color: rgba(255, 255, 255, 0.8);\n    font-weight: 300;\n}\n\n/* Clock Grid */\n.clock-grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));\n    gap: 30px;\n    margin-bottom: 60px;\n}\n\n/* Clock Card */\n.clock-card {\n    background: white;\n    border-radius: 20px;\n    padding: 30px;\n    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);\n    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n    animation: fadeInUp 0.6s ease backwards;\n    position: relative;\n    overflow: hidden;\n}\n\n.clock-card:nth-child(1) { animation-delay: 0.1s; }\n.clock-card:nth-child(2) { animation-delay: 0.2s; }\n.clock-card:nth-child(3) { animation-delay: 0.3s; }\n.clock-card:nth-child(4) { animation-delay: 0.4s; }\n.clock-card:nth-child(5) { animation-delay: 0.5s; }\n.clock-card:nth-child(6) { animation-delay: 0.6s; }\n\n.clock-card::before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    height: 4px;\n    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);\n}\n\n.clock-card:hover {\n    transform: translateY(-10px);\n    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);\n}\n\n/* Timezone Info */\n.timezone-info {\n    margin-bottom: 25px;\n    text-align: center;\n}\n\n.timezone-info h2 {\n    font-size: 26px;\n    color: #2c3e50;\n    margin-bottom: 5px;\n    font-weight: 700;\n}\n\n.timezone-code {\n    font-size: 13px;\n    color: #667eea;\n    font-weight: 600;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n}\n\n/* Digital Clock */\n.digital-clock {\n    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);\n    border-radius: 12px;\n    padding: 20px;\n    margin-bottom: 25px;\n    text-align: center;\n    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);\n}\n\n.digital-clock .time {\n    font-size: 42px;\n    font-weight: 700;\n    color: #00ff88;\n    font-family: 'Courier New', monospace;\n    letter-spacing: 2px;\n    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);\n    display: block;\n}\n\n/* Analog Clock Face */\n.clock-face {\n    width: 200px;\n    height: 200px;\n    border-radius: 50%;\n    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);\n    position: relative;\n    margin: 0 auto;\n    box-shadow: \n        0 0 0 8px white,\n        0 0 0 12px #667eea,\n        0 10px 30px rgba(0, 0, 0, 0.15);\n    border: 2px solid #ecf0f1;\n}\n\n/* Clock Numbers */\n.clock-face::after {\n    content: '';\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    background-image: \n        radial-gradient(circle at 50% 10%, #2c3e50 2px, transparent 2px),\n        radial-gradient(circle at 90% 50%, #2c3e50 2px, transparent 2px),\n        radial-gradient(circle at 50% 90%, #2c3e50 2px, transparent 2px),\n        radial-gradient(circle at 10% 50%, #2c3e50 2px, transparent 2px);\n    border-radius: 50%;\n}\n\n/* Clock Hands */\n.hand {\n    position: absolute;\n    bottom: 50%;\n    left: 50%;\n    transform-origin: bottom center;\n    background: #2c3e50;\n    border-radius: 10px;\n}\n\n.hand.hour {\n    width: 6px;\n    height: 50px;\n    margin-left: -3px;\n    margin-bottom: 0;\n    background: linear-gradient(to top, #667eea, #764ba2);\n    box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);\n}\n\n.hand.minute {\n    width: 4px;\n    height: 65px;\n    margin-left: -2px;\n    margin-bottom: -5px;\n    background: linear-gradient(to top, #764ba2, #667eea);\n    box-shadow: 0 0 3px rgba(118, 75, 162, 0.5);\n}\n\n.hand.second {\n    width: 2px;\n    height: 75px;\n    margin-left: -1px;\n    margin-bottom: -15px;\n    background: #e74c3c;\n    box-shadow: 0 0 3px rgba(231, 76, 60, 0.7);\n}\n\n/* Center Dot */\n.center-dot {\n    position: absolute;\n    width: 12px;\n    height: 12px;\n    background: #2c3e50;\n    border-radius: 50%;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    z-index: 10;\n    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);\n}\n\n/* World Info Section */\n.world-info {\n    background: white;\n    border-radius: 20px;\n    padding: 40px;\n    margin-top: 40px;\n    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);\n    animation: fadeInUp 0.8s ease 0.7s backwards;\n}\n\n.world-info h3 {\n    font-size: 28px;\n    color: #2c3e50;\n    margin-bottom: 30px;\n    text-align: center;\n    font-weight: 700;\n}\n\n.info-grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n    gap: 25px;\n}\n\n.info-item {\n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n    padding: 25px;\n    border-radius: 15px;\n    color: white;\n    transition: all 0.3s ease;\n    cursor: pointer;\n}\n\n.info-item:hover {\n    transform: translateY(-5px);\n    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);\n}\n\n.info-item .city {\n    display: block;\n    font-size: 20px;\n    font-weight: 700;\n    margin-bottom: 8px;\n}\n\n.info-item .desc {\n    display: block;\n    font-size: 14px;\n    opacity: 0.9;\n    font-weight: 300;\n}\n\n/* Animations */\n@keyframes slideDown {\n    from {\n        opacity: 0;\n        transform: translateY(-30px);\n    }\n    to {\n        opacity: 1;\n        transform: translateY(0);\n    }\n}\n\n@keyframes fadeInUp {\n    from {\n        opacity: 0;\n        transform: translateY(30px);\n    }\n    to {\n        opacity: 1;\n        transform: translateY(0);\n    }\n}\n\n/* Responsive Design */\n@media (max-width: 1024px) {\n    .clock-grid {\n        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n        gap: 25px;\n    }\n\n    .header h1 {\n        font-size: 36px;\n    }\n}\n\n@media (max-width: 768px) {\n    body {\n        padding: 20px 15px;\n    }\n\n    .header {\n        margin-bottom: 40px;\n    }\n\n    .header h1 {\n        font-size: 28px;\n    }\n\n    .header p {\n        font-size: 16px;\n    }\n\n    .clock-grid {\n        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n        gap: 20px;\n    }\n\n    .clock-card {\n        padding: 20px;\n    }\n\n    .digital-clock .time {\n        font-size: 32px;\n    }\n\n    .clock-face {\n        width: 160px;\n        height: 160px;\n    }\n\n    .world-info {\n        padding: 25px;\n    }\n\n    .world-info h3 {\n        font-size: 22px;\n    }\n}\n\n@media (max-width: 480px) {\n    .header h1 {\n        font-size: 22px;\n    }\n\n    .header p {\n        font-size: 14px;\n    }\n\n    .clock-grid {\n        grid-template-columns: 1fr;\n    }\n\n    .digital-clock .time {\n        font-size: 28px;\n    }\n\n    .clock-face {\n        width: 140px;\n        height: 140px;\n    }\n\n    .timezone-info h2 {\n        font-size: 20px;\n    }\n\n    .info-grid {\n        grid-template-columns: 1fr;\n    }\n}\n\n/* Dark Mode Support */\n@media (prefers-color-scheme: dark) {\n    .clock-card {\n        background: #1e2139;\n        color: #ecf0f1;\n    }\n\n    .timezone-info h2 {\n        color: #ecf0f1;\n    }\n\n    .world-info {\n        background: #1e2139;\n    }\n\n    .world-info h3 {\n        color: #ecf0f1;\n    }\n}"
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.clock-container {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header p {
+    font-size: 18px;
+    color: #a0aec0;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Clock Grid */
+.clock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.clock-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.clock-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+.clock-card:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+}
+
+.clock-card:hover::before {
+    opacity: 1;
+}
+
+.timezone-info {
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.timezone-info h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.timezone-code {
+    font-size: 13px;
+    color: #7c3aed;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Digital Clock */
+.digital-clock {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.digital-clock .time {
+    font-size: 56px;
+    font-weight: 700;
+    font-family: 'Monaco', 'Courier New', monospace;
+    color: #00d4ff;
+    letter-spacing: 3px;
+    display: block;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+/* Analog Clock */
+.clock-face {
+    width: 140px;
+    height: 140px;
+    border: 3px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+.clock-face::before,
+.clock-face::after {
+    content: '';
+    position: absolute;
+    background: rgba(0, 212, 255, 0.3);
+}
+
+.clock-face::before {
+    width: 2px;
+    height: 20px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.clock-face::after {
+    width: 20px;
+    height: 2px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    background: #00d4ff;
+    border-radius: 10px;
+}
+
+.hand.hour {
+    width: 6px;
+    height: 35px;
+    margin-left: -3px;
+    background: linear-gradient(180deg, #00d4ff 0%, #7c3aed 100%);
+}
+
+.hand.minute {
+    width: 4px;
+    height: 45px;
+    margin-left: -2px;
+    background: linear-gradient(180deg, #00d4ff 0%, rgba(0, 212, 255, 0.7) 100%);
+}
+
+.hand.second {
+    width: 2px;
+    height: 50px;
+    margin-left: -1px;
+    background: #ff006e;
+    box-shadow: 0 0 10px rgba(255, 0, 110, 0.7);
+}
+
+.center-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #00d4ff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+    z-index: 10;
+}
+
+/* World Info */
+.world-info {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 50px;
+    margin-top: 60px;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.world-info h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    background: rgba(124, 58, 237, 0.1);
+    border-left: 3px solid #7c3aed;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-left-color: #00d4ff;
+    transform: translateX(5px);
+}
+
+.info-item .city {
+    font-size: 16px;
+    font-weight: 700;
+    color: #00d4ff;
+}
+
+.info-item .desc {
+    font-size: 13px;
+    color: #a0aec0;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .clock-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .clock-card {
+        padding: 30px 20px;
+    }
+
+    .digital-clock .time {
+        font-size: 40px;
+    }
+
+    .world-info {
+        padding: 30px 20px;
+    }
+
+    .world-info h3 {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .header {
+        margin-bottom: 40px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .clock-card {
+        padding: 25px 15px;
+    }
+
+    .digital-clock .time {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .clock-face {
+        width: 120px;
+        height: 120px;
+    }
+}
